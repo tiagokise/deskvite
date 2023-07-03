@@ -5,7 +5,7 @@ export const Window = styled.div`
     ${({isOpen}: any) => css`
         width: auto;
         height: auto;
-        background-color: #00000030;
+        background-color: #ccc;
         /* min-width: 200px;
         min-height: 200px; */
         /* max-width: 90vw;

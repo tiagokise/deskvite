@@ -5,8 +5,13 @@ import 'react-clock/dist/Clock.css';
 import { useEffect, useState } from 'react';
 import * as S from './ClockApp.styles';
 import HighlightOffTwoToneIcon from '@mui/icons-material/HighlightOffTwoTone';
+import { Rnd } from 'react-rnd';
 
 export function ClockApp({ clockOpen, setClockOpen}: any) {
+  const [clockX, setClockX] = useState<any>(100)
+  const [clockY, setClockY] = useState<any>(100)
+  const [clockProps, setClockProps] = useState<any>({x: setClockX, y: clockY, width: '204px', height: '204px'})
+
   const [value, setValue] = useState(new Date());
 
   useEffect(() => {
@@ -19,6 +24,22 @@ export function ClockApp({ clockOpen, setClockOpen}: any) {
   
 
   return (
+    <Rnd 
+      size={{ width: '204px',  height: '204px' }}
+      position={{ x: clockX, y: clockY }}
+      onDragStop={(e, d) => {
+        e.preventDefault()
+        e.stopPropagation()
+        setClockX(d.x)
+        setClockY(d.y)
+        setClockProps({x: d.x, y: d.y})
+      } }
+      enableResizing={false}
+      // enableResizing={{ top:false, right:true, bottom:true, left:false, topRight:false, bottomRight:true, bottomLeft:false, topLeft:false }}
+      bounds="parent"
+      style={{zIndex: 99}}
+      {...clockProps}
+    >
       <S.ClockApp isOpen={clockOpen} setIOpen={setClockOpen}>
         <S.ClockWrapper>
           <S.CloseButton aria-label="close" onClick={() => setClockOpen(!clockOpen)} >
@@ -28,5 +49,6 @@ export function ClockApp({ clockOpen, setClockOpen}: any) {
           <Clock value={value} />
         </S.ClockWrapper>
       </S.ClockApp>
+    </Rnd>
     )
   }

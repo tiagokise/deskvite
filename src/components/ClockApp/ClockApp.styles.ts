@@ -4,8 +4,8 @@ import {Window} from '../Window/Window';
 
 export const ClockApp = styled(Window)<any>`
   position: absolute;
-  top: 16px;
-  right: 16px;
+  /* top: 16px;
+  right: 16px; */
 
 `
 
