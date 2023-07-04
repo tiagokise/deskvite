@@ -3,13 +3,12 @@
 import 'react-clock/dist/Clock.css';
 import * as S from './SiteTk.styles';
 import HighlightOffTwoToneIcon from '@mui/icons-material/HighlightOffTwoTone';
-import { Typography } from '@mui/material';
 import { Rnd } from 'react-rnd';
 import { useState } from 'react';
 
 export default function SiteTk({ siteOpen, setSiteOpen}: any) {
-  const [siteTkWidth, setSiteTkWidth] = useState<any>('auto')
-  const [siteTkHeight, setSiteTkHeight] = useState<any>('auto')
+  const [siteTkWidth, setSiteTkWidth] = useState<any>('100%')
+  const [siteTkHeight, setSiteTkHeight] = useState<any>('85%')
   const [siteTkX, setSiteTkX] = useState<any>(0)
   const [siteTkY, setSiteTkY] = useState<any>(0)
   const [siteTKProps, setSiteTKProps] = useState<any>({x: setSiteTkX, y: siteTkY, width: siteTkWidth, height: siteTkHeight})
@@ -34,8 +33,8 @@ export default function SiteTk({ siteOpen, setSiteOpen}: any) {
         setSiteTkY(position.y)
         setSiteTKProps({width: siteTkWidth, height: siteTkHeight, x: siteTkX, y: siteTkY})
       }}
-      // bounds="parent"
-      style={{zIndex: 99, minWidth: '100%', minHeight: '80%'}}
+      bounds="body"
+      style={{zIndex: 99}}
       {...siteTKProps}
     >
       <S.SiteTk isOpen={siteOpen} setIOpen={setSiteOpen}>
@@ -50,7 +49,7 @@ export default function SiteTk({ siteOpen, setSiteOpen}: any) {
               Primeiro site desenvolvido por mim, em 2019.
             </Typography>
             </div> */}
-            <iframe src="https://tiagok-dev.netlify.app/" frame-border="0" width="1024" height="100%"  ></iframe>
+            <iframe src="https://tiagok-dev.netlify.app/" frame-border="0" width="100%" height="100%"  ></iframe>
           {/* </S.SiteWrapper> */}
         </S.ClockWrapper>
       </S.SiteTk>

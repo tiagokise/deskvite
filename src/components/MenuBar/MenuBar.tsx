@@ -1,7 +1,7 @@
 'use client'
   
 import { useEffect, useState } from 'react'
-import { Toolbar, IconButton, Typography } from '@mui/material'
+import { Toolbar, IconButton, Typography, Tooltip } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
@@ -55,7 +55,11 @@ export function MenuBar({clockOpen, setClockOpen}: any) {
         <Typography variant="h6" color="inherit" component="div">
           TK System
         </Typography>
-        {stringfyValue && <S.Date variant="text" onClick={handleClock} >{stringfyValue}</S.Date>}
+        {stringfyValue && 
+          <Tooltip title="Clique para abrir o relógio">
+            <S.Date variant="text" onClick={handleClock} >{stringfyValue}</S.Date>
+          </Tooltip>
+        }
       </Toolbar>
     </S.MenuBar>
 

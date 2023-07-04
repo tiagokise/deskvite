@@ -23,7 +23,10 @@ export const ClockWrapper = styled.div`
       background-color: azure !important; 
     }
   }
-  
+  iframe{
+    /* width: calc(100% - 24px);
+    height: calc(100% - 24px); */
+  }
 `;
 
 export const CloseButton = styled(IconButton)`
@@ -33,16 +36,16 @@ export const CloseButton = styled(IconButton)`
 `;
 
 export const SiteWrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
+  /* width: 100%;
+  height: 100%; */
+  /* display: flex; */
 
-  /* overflow: hidden; */
+  /* overflow: hidden;
   iframe{
-    width: 70%;
+    width: 100%;
     height: auto;
   }
   >div {
-    flex: 1;
-  }
+    flex: 1; */
+  /* } */
 `;

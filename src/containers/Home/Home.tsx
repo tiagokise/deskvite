@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import {AppMenu} from "../../components/AppMenu/AppMenu"
 import {ClockApp} from "../../components/ClockApp/ClockApp"
 import {MenuBar} from "../../components/MenuBar/MenuBar"
@@ -27,6 +27,36 @@ export default function Home() {
       console.log('click out', e)
     }
   }
+  // open one app at a time
+  useEffect(() => {
+    if(clockOpen){
+      setPaintOpen(false)
+      setBgPreferencesOpen(false)
+      setSiteOpen(false)
+    }
+  }, [clockOpen])
+  useEffect(() => {
+    if(paintOpen){
+      setClockOpen(false)
+      setBgPreferencesOpen(false)
+      setSiteOpen(false)
+    }
+  }, [paintOpen])
+  useEffect(() => {
+    if(bgPreferencesOpen){
+      setClockOpen(false)
+      setPaintOpen(false)
+      setSiteOpen(false)
+    }
+  }, [bgPreferencesOpen])
+  useEffect(() => {
+    if(siteOpen){
+      setClockOpen(false)
+      setPaintOpen(false)
+      setBgPreferencesOpen(false)
+    }
+  }, [siteOpen])
+  
 
   return (
     
