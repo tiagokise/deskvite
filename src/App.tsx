@@ -2,15 +2,11 @@
 import { Routes, Route } from "react-router-dom";
 
 import Home from './containers/Home/Home'
+// @ts-ignore
+import ImageGallery from './components/ImageGallery/ImageGallery.jsx'
+import { Gallery } from "./components/Gallery/Gallery.js";
 // import './styles/globals.css'
 
-function About() {
-  return (
-    <div>
-      <h1>About</h1>
-    </div>
-  )
-}
 
 
 function App() {
@@ -18,7 +14,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="dashboard" element={<About />} />
+      <Route path="dashboard" element={<Gallery />} />
     </Routes>
   )
 }
