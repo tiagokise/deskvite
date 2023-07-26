@@ -1,6 +1,6 @@
 'use client'
 import 'react-clock/dist/Clock.css';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useState } from 'react';
 import * as S from './Gallery.styles';
 
 export function Gallery({ clockOpen, setClockOpen}: any) {
